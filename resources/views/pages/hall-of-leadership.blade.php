@@ -120,7 +120,7 @@
                     @foreach($bph as $person)
                     <div class="w-full sm:w-[350px] rounded-3xl bg-surface-raised border border-white/5 overflow-hidden hover:border-neon/20 hover:-translate-y-2 hover:shadow-2xl hover:shadow-neon/10 transition-all duration-500 group">
                         <div class="aspect-[4/5] bg-gradient-to-br from-neon/5 to-electric/5 relative overflow-hidden">
-                            <img src="{{ asset('images/pengurus/' . $person['img']) }}?v={{ filemtime(public_path('images/pengurus/' . $person['img'])) }}" alt="{{ $person['name'] }}" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                            <img src="{{ asset('images/pengurus/' . $person['img']) }}?v={{ filemtime(public_path('images/pengurus/' . $person['img'])) }}" alt="{{ $person['name'] }}" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center scale-125 group-hover:scale-[1.35] transition-transform duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                             <div class="absolute bottom-0 inset-x-0 p-6">
                                 <div class="inline-block px-3 py-1 mb-3 rounded-full bg-neon/20 border border-neon/30 backdrop-blur-md text-neon text-xs font-bold tracking-wider uppercase">
@@ -143,7 +143,7 @@
                     @foreach($sekben as $person)
                     <div class="rounded-3xl bg-surface-raised border border-white/5 overflow-hidden hover:border-white/10 hover:-translate-y-1 transition-all duration-500 group flex items-center p-4 gap-4">
                         <div class="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 rounded-2xl overflow-hidden bg-white/5 relative">
-                            <img src="{{ asset('images/pengurus/' . $person['img']) }}?v={{ filemtime(public_path('images/pengurus/' . $person['img'])) }}" alt="{{ $person['name'] }}" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700">
+                            <img src="{{ asset('images/pengurus/' . $person['img']) }}?v={{ filemtime(public_path('images/pengurus/' . $person['img'])) }}" alt="{{ $person['name'] }}" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center scale-125 group-hover:scale-[1.35] transition-transform duration-700">
                         </div>
                         <div class="flex-1 py-2">
                             <div class="text-xs font-bold text-electric uppercase tracking-wider mb-1">{{ $person['title'] }}</div>
@@ -170,7 +170,7 @@
                             @foreach($sekbid['members'] as $member)
                             <div class="text-center group">
                                 <div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-white/5 mb-3 relative">
-                                    <img src="{{ asset('images/pengurus/' . $member['img']) }}?v={{ filemtime(public_path('images/pengurus/' . $member['img'])) }}" alt="{{ $member['name'] }}" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500">
+                                    <img src="{{ asset('images/pengurus/' . $member['img']) }}?v={{ filemtime(public_path('images/pengurus/' . $member['img'])) }}" alt="{{ $member['name'] }}" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center scale-125 group-hover:scale-[1.35] transition-transform duration-500">
                                 </div>
                                 <h4 class="text-sm font-bold text-white leading-tight mb-1 group-hover:text-neon transition-colors">{{ $member['name'] }}</h4>
                                 @if(isset($member['title']))

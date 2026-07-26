@@ -1,0 +1,15 @@
+services:
+  app:
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+    volumes:
+      - .:/app
+      - /app/vendor
+      - /app/node_modules
+      - /app/storage
+    command: >
+      sh -c "
+        php artisan optimize:clear || true &&
+        php artisan octane:start --server=frankenphp --host=0.0.0.0 --port=80 --admin-port=2019 --watch
+      "

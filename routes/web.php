@@ -53,6 +53,14 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 });
 
 // ========================
+// HEALTH CHECK (Railway)
+// ========================
+
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok']);
+});
+
+// ========================
 // SEO (Dynamic Sitemap & Robots)
 // ========================
 

@@ -40,9 +40,6 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
         bcmath \
         opcache
 
-ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
-RUN install-php-extensions redis
-
 RUN apk del ${PHPIZE_DEPS}
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -67,13 +64,5 @@ ENV APP_ENV=production
 ENV APP_DEBUG=false
 ENV OCTANE_SERVER=frankenphp
 ENV FRANKENPHP_CONFIG="worker ./public/index.php"
-ENV CADDY_GLOBAL_OPTIONS="debug"
 
-EXPOSE 80
-EXPOSE 443
-EXPOSE 443/udp
-
-HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
-    CMD wget -qO- http://localhost:80/health || exit 1
-
-CMD ["php", "artisan", "octane:start", "--server=frankenphp", "--host=0.0.0.0", "--port=80", "--admin-port=2019"]
+CMD php artisan octane:start --server=frankenphp --host=0.0.0.0 --port="${PORT:-80}" --admin-port=2019

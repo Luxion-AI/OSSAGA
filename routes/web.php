@@ -60,6 +60,18 @@ Route::get('/health', function () {
     return response()->json(['status' => 'ok']);
 });
 
+// TEMPORARY SEED ROUTE
+Route::get('/seed-admin', function () {
+    \App\Models\User::firstOrCreate(
+        ['email' => 'admin@ossaga.id'],
+        [
+            'name' => 'Admin OSSAGA',
+            'password' => bcrypt('password'),
+        ]
+    );
+    return 'Admin user seeded successfully. You can now login with admin@ossaga.id and password.';
+});
+
 // ========================
 // SEO (Dynamic Sitemap & Robots)
 // ========================

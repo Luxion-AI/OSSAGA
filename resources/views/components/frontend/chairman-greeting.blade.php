@@ -8,14 +8,8 @@
             <!-- Image Side -->
             <div class="w-full lg:w-5/12 relative" x-data="{ offset: 0 }" x-init="window.addEventListener('scroll', () => { offset = window.pageYOffset * 0.03 })">
                 <div class="aspect-[4/5] rounded-2xl overflow-hidden relative z-10 bg-surface-raised border border-white/10" :style="'transform: translateY(' + offset + 'px)'">
-                    <div class="absolute inset-0 bg-gradient-to-br from-neon/15 via-surface-raised to-electric/15 flex items-center justify-center">
-                        <div class="text-center">
-                            <div class="w-24 h-24 mx-auto rounded-full bg-neon/10 border border-neon/20 flex items-center justify-center mb-4 hover:bg-neon/20 hover:scale-110 transition-all duration-500">
-                                <svg class="w-12 h-12 text-neon/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                            </div>
-                            <span class="text-sm text-zinc-400 font-medium">Foto Ketua OSIS</span>
-                        </div>
-                    </div>
+                    <img src="{{ asset('images/pengurus/Aluna.webp') }}?v={{ filemtime(public_path('images/pengurus/Aluna.webp')) }}" alt="Ketua OSIS" class="absolute inset-0 w-full h-full object-cover object-center scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                 </div>
                 <div class="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border border-neon/20 -z-10"></div>
                 <div class="absolute -bottom-8 -right-8 w-full h-full rounded-2xl border border-neon/10 -z-20"></div>
@@ -44,8 +38,8 @@
                         A
                     </div>
                     <div>
-                        <div class="font-bold text-white text-lg">Ahmad Farhan</div>
-                        <div class="text-sm text-zinc-400">Ketua OSIS Periode 2026/2027</div>
+                        <div class="font-bold text-white text-lg">Aluna Marsya Princessa Sumarno</div>
+                        <div class="text-sm text-zinc-400">Ketua OSIS Periode 2025/2026</div>
                     </div>
                 </div>
             </div>

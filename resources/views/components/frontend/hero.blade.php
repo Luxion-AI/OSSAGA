@@ -8,7 +8,7 @@
             <span class="relative flex h-2.5 w-2.5">
                 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
             </span>
-            Kabinet Inovasi Berkelanjutan — 2026/2027
+            Kabinet Harmoni Nusantara — 2025/2026
         </div>
 
         <!-- Headline -->

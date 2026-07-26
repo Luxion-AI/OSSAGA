@@ -63,6 +63,5 @@ RUN mkdir -p /app/storage/logs /app/storage/framework/views /app/storage/framewo
 ENV APP_ENV=production
 ENV APP_DEBUG=false
 ENV OCTANE_SERVER=frankenphp
-ENV FRANKENPHP_CONFIG="worker ./public/index.php"
 
 CMD php artisan octane:start --server=frankenphp --host=0.0.0.0 --port="${PORT:-80}" --admin-port=2019

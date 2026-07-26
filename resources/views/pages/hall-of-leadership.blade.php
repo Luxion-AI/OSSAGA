@@ -120,7 +120,7 @@
                     @foreach($bph as $person)
                     <div class="w-full sm:w-[350px] rounded-3xl bg-surface-raised border border-white/5 overflow-hidden hover:border-neon/20 hover:-translate-y-2 hover:shadow-2xl hover:shadow-neon/10 transition-all duration-500 group">
                         <div class="aspect-[4/5] bg-gradient-to-br from-neon/5 to-electric/5 relative overflow-hidden">
-                            <img src="{{ asset('images/pengurus/' . $person['img']) }}?v={{ filemtime(public_path('images/pengurus/' . $person['img'])) }}" alt="{{ $person['name'] }}" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center scale-125 group-hover:scale-[1.35] transition-transform duration-700">
+                            <img src="{{ asset('images/pengurus/' . $person['img']) }}?v={{ filemtime(public_path('images/pengurus/' . $person['img'])) }}" alt="{{ $person['name'] }}" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                             <div class="absolute bottom-0 inset-x-0 p-6">
                                 <div class="inline-block px-3 py-1 mb-3 rounded-full bg-neon/20 border border-neon/30 backdrop-blur-md text-neon text-xs font-bold tracking-wider uppercase">

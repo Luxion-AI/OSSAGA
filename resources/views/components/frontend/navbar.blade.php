@@ -8,7 +8,7 @@
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
                 <a href="/" class="flex items-center gap-3 group">
-                    <img src="{{ asset('images/logo.webp') }}" alt="Logo OSSAGA" class="w-9 h-9 object-contain group-hover:scale-110 transition-all duration-300">
+                    <img src="{{ asset('images/logo.webp') }}" alt="Logo OSSAGA" fetchpriority="high" class="w-9 h-9 object-contain group-hover:scale-110 transition-all duration-300">
                     <span class="font-bold text-lg tracking-tight text-white">OSSAGA</span>
                 </a>
             </div>

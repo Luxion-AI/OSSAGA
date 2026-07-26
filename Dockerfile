@@ -18,6 +18,7 @@ FROM dunglas/frankenphp:php8.4-alpine AS base
 RUN apk add --no-cache \
     git \
     unzip \
+    ca-certificates \
     libzip-dev \
     postgresql-dev \
     icu-dev \
@@ -53,7 +54,8 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 RUN rm -rf /app/bootstrap/cache/*.php \
     && php artisan package:discover --ansi \
-    && php artisan event:cache
+    && php artisan event:cache \
+    && php artisan storage:link
 
 RUN chown -R www-data:www-data /app \
     && chmod -R ug+w /app/storage /app/bootstrap/cache
@@ -64,4 +66,4 @@ ENV APP_ENV=production
 ENV APP_DEBUG=false
 ENV OCTANE_SERVER=frankenphp
 
-CMD php artisan octane:start --server=frankenphp --host=0.0.0.0 --port="${PORT:-80}" --admin-port=2019
+CMD php artisan octane:start --server=frankenphp --host=0.0.0.0 --port=80 --admin-port=2019

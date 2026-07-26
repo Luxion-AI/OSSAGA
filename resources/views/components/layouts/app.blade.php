@@ -11,6 +11,7 @@
         :description="$description ?? 'Official Website OSIS SMK Negeri 1 Purbalingga'"
         :image="$ogImage ?? null"
     />
+    <link rel="icon" type="image/webp" href="{{ asset('images/logo.webp') }}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

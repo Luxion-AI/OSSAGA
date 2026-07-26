@@ -8,9 +8,7 @@
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center">
                 <a href="/" class="flex items-center gap-3 group">
-                    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-neon to-electric flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-neon/20 group-hover:shadow-neon/40 group-hover:scale-110 transition-all duration-300">
-                        O
-                    </div>
+                    <img src="{{ asset('images/logo.webp') }}" alt="Logo OSSAGA" class="w-9 h-9 object-contain group-hover:scale-110 transition-all duration-300">
                     <span class="font-bold text-lg tracking-tight text-white">OSSAGA</span>
                 </a>
             </div>

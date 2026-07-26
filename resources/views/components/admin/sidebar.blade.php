@@ -1,9 +1,7 @@
 <aside class="w-64 bg-surface-raised border-r border-white/5 flex-shrink-0 flex flex-col h-full z-20">
     <div class="h-16 flex items-center px-6 border-b border-white/5">
         <a href="/" class="flex items-center gap-2.5 group">
-            <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-neon to-electric flex items-center justify-center text-white font-bold text-xs shadow-lg shadow-neon/20">
-                O
-            </div>
+            <img src="{{ asset('images/logo.webp') }}" alt="Logo OSSAGA" class="w-7 h-7 object-contain">
             <span class="font-bold text-sm tracking-tight text-white">OSSAGA <span class="text-zinc-500 font-normal">Admin</span></span>
         </a>
     </div>

@@ -18,9 +18,7 @@
                 
                 <!-- Logo & Header -->
                 <div class="text-center mb-10">
-                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 mb-6 shadow-[0_0_40px_-10px_rgba(59,130,246,0.6)]">
-                        <span class="text-2xl font-black text-white tracking-tighter">O</span>
-                    </div>
+                    <img src="{{ asset('images/logo.webp') }}" alt="Logo OSSAGA" class="w-16 h-16 object-contain mb-6 drop-shadow-2xl mx-auto">
                     <h2 class="text-3xl font-black text-white tracking-tight mb-2">Welcome Back</h2>
                     <p class="text-zinc-400 font-medium text-sm">Masuk ke sistem administrasi OSSAGA</p>
                 </div>

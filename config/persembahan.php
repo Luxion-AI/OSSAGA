@@ -13,7 +13,7 @@ return [
     */
 
     'pembuat' => [
-        'nama'         => '—',
+        'nama'         => 'Luxion',
         'avatar_emoji' => '🚀',
         'quote'        => '"Dedikasi kecil untuk organisasi besar. Semoga bermanfaat."',
         'link_github'  => null,

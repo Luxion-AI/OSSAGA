@@ -66,4 +66,4 @@ ENV APP_ENV=production
 ENV APP_DEBUG=false
 ENV OCTANE_SERVER=frankenphp
 
-CMD php artisan octane:start --server=frankenphp --host=0.0.0.0 --port=${PORT:-8080} --admin-port=2019
+CMD php artisan migrate --force && php artisan octane:start --server=frankenphp --host=0.0.0.0 --port=${PORT:-8080} --admin-port=2019

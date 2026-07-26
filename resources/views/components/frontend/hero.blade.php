@@ -13,8 +13,8 @@
 
         <!-- Headline -->
         <h1 class="text-6xl sm:text-8xl lg:text-9xl font-black tracking-tighter mb-10 leading-[0.85]">
-            <span class="block text-white">Bersama OSSAGA,</span>
-            <span class="block mt-3 text-blue-400">Membangun Masa Depan.</span>
+            <span class="block text-white">Bersama OSSAGA</span>
+            <span class="block mt-3 text-blue-400">Membangun Masa Depan</span>
         </h1>
 
         <!-- Subheadline -->

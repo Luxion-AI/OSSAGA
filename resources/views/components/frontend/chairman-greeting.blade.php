@@ -29,7 +29,7 @@
                 <blockquote class="relative mb-8 pl-6 py-3">
                     <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-neon via-electric to-transparent rounded-full"></div>
                     <p class="text-xl text-zinc-300 leading-relaxed italic font-light">
-                        "Kami percaya bahwa setiap siswa memiliki potensi luar biasa. Tugas OSSAGA adalah menjadi katalisator, menyediakan ruang berekspresi, dan membimbing setiap langkah menuju visi bersama."
+                        "Menjadikan OSIS SMK Negeri 1 Purbalingga sebagai tempat yang kreatif, inspiratif, menjadi wadah untuk seluruh siswa dapat berkembang, berprestasi, serta siap menghadapi perubahan zaman dan tantangan masa depan."
                     </p>
                 </blockquote>
                 

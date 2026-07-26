@@ -4,10 +4,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Response;
 use App\Models\Content;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\ContentController;
-use App\Http\Controllers\Admin\ProgramController;
-
 // ========================
 // PUBLIC PAGES
 // ========================
@@ -44,32 +40,11 @@ Route::post('/login', [AuthController::class, 'login'])->middleware('guest');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // ========================
-// ADMIN DASHBOARD
-// ========================
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('berita', ContentController::class);
-    Route::resource('program', ProgramController::class);
-});
-
-// ========================
 // HEALTH CHECK (Railway)
 // ========================
 
 Route::get('/health', function () {
     return response()->json(['status' => 'ok']);
-});
-
-// TEMPORARY SEED ROUTE
-Route::get('/seed-admin', function () {
-    \App\Models\User::firstOrCreate(
-        ['email' => 'admin@ossaga.id'],
-        [
-            'name' => 'Admin OSSAGA',
-            'password' => bcrypt('password'),
-        ]
-    );
-    return 'Admin user seeded successfully. You can now login with admin@ossaga.id and password.';
 });
 
 // ========================

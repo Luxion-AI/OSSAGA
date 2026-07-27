@@ -27,6 +27,18 @@ class Period extends Model
         'visual_identity' => 'array',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($period) {
+            // If this period is being set to active, deactivate all others
+            if ($period->is_active) {
+                static::where('id', '!=', $period->id)->update(['is_active' => false]);
+            }
+        });
+    }
+
     /**
      * Get the active period.
      */

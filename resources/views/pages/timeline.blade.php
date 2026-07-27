@@ -1,56 +1,25 @@
+@php
+    $formattedEvents = $workPrograms->map(function($wp, $index) {
+        $docs = [];
+        if (is_array($wp->images)) {
+            foreach($wp->images as $img) {
+                $docs[] = asset('storage/' . $img);
+            }
+        }
+        
+        return [
+            'id' => str_pad($index + 1, 2, '0', STR_PAD_LEFT),
+            'title' => $wp->name,
+            'desc' => $wp->description,
+            'docs' => $docs,
+        ];
+    })->values()->toJson();
+@endphp
+
 <x-layouts.app :title="'Timeline Program Kerja'">
     <div x-data="{ 
         selectedEvent: null,
-        events: [
-            {
-                id: '01',
-                title: 'RECRUITMENT OSIS',
-                desc: 'Kegiatan seleksi dan penerimaan anggota baru OSIS SMK Negeri 1 Purbalingga yang bertujuan mencari generasi penerus dengan jiwa kepemimpinan tinggi.',
-                docs: ['https://placehold.co/600x400/1D0002/FF4433?text=Dokumentasi+Recruitment', 'https://placehold.co/600x400/1D0002/FF4433?text=Wawancara']
-            },
-            {
-                id: '02',
-                title: 'PEMILIHAN KETUA OSIS',
-                desc: 'Pesta demokrasi siswa untuk memilih Ketua dan Wakil Ketua OSIS periode baru, mengajarkan nilai-nilai demokrasi secara langsung.',
-                docs: ['https://placehold.co/600x400/1D0002/FF4433?text=Kampanye', 'https://placehold.co/600x400/1D0002/FF4433?text=Pemungutan+Suara']
-            },
-            {
-                id: '03',
-                title: 'LATIHAN DASAR KEPEMIMPINAN',
-                desc: 'Pelatihan wajib untuk menanamkan jiwa kepemimpinan, kedisiplinan, dan tanggung jawab bagi seluruh pengurus OSIS yang baru terpilih.',
-                docs: ['https://placehold.co/600x400/1D0002/FF4433?text=Materi+LDK', 'https://placehold.co/600x400/1D0002/FF4433?text=Outbound']
-            },
-            {
-                id: '04',
-                title: 'HUT SMEGA',
-                desc: 'Perayaan hari ulang tahun SMK Negeri 1 Purbalingga yang dimeriahkan dengan berbagai perlombaan, pentas seni, dan acara kebersamaan.',
-                docs: ['https://placehold.co/600x400/1D0002/FF4433?text=Pentas+Seni', 'https://placehold.co/600x400/1D0002/FF4433?text=Kemeriahan']
-            },
-            {
-                id: '05',
-                title: 'WISUDA',
-                desc: 'Acara pelepasan dan perpisahan siswa-siswi kelas XII yang telah menyelesaikan masa studinya di SMK Negeri 1 Purbalingga.',
-                docs: ['https://placehold.co/600x400/1D0002/FF4433?text=Prosesi+Wisuda', 'https://placehold.co/600x400/1D0002/FF4433?text=Foto+Bersama']
-            },
-            {
-                id: '06',
-                title: 'CLASSMEET',
-                desc: 'Ajang perlombaan antar kelas yang diadakan setelah ujian semester selesai, bertujuan untuk melepas penat dan mempererat solidaritas antar siswa.',
-                docs: ['https://placehold.co/600x400/1D0002/FF4433?text=Lomba+Futsal', 'https://placehold.co/600x400/1D0002/FF4433?text=E-Sports']
-            },
-            {
-                id: '07',
-                title: 'MASA PENGENALAN LINGKUNGAN SEKOLAH',
-                desc: 'Kegiatan pengenalan lingkungan, budaya, dan tata tertib sekolah bagi siswa-siswi baru kelas X (MPLS).',
-                docs: ['https://placehold.co/600x400/1D0002/FF4433?text=Upacara+Pembukaan', 'https://placehold.co/600x400/1D0002/FF4433?text=Materi+MPLS']
-            },
-            {
-                id: '08',
-                title: 'HUT RI',
-                desc: 'Peringatan Hari Kemerdekaan Republik Indonesia pada tanggal 17 Agustus yang diisi dengan upacara bendera dan berbagai perlombaan tradisional yang seru.',
-                docs: ['https://placehold.co/600x400/1D0002/FF4433?text=Upacara+Bendera', 'https://placehold.co/600x400/1D0002/FF4433?text=Lomba+Agustusan']
-            }
-        ]
+        events: {!! $formattedEvents !!}
     }">
         <section class="pt-36 pb-16 relative overflow-hidden">
             <div class="absolute inset-0 bg-grid pointer-events-none"></div>

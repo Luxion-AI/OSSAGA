@@ -71,7 +71,15 @@
                 <div class="lg:col-span-3">
                     <div class="rounded-2xl bg-surface-raised border border-white/5 p-8">
                         <h2 class="text-2xl font-black text-white mb-8">Kirim Pesan</h2>
-                        <form action="#" method="POST" class="space-y-5">
+                        
+                        @if(session('success'))
+                        <div class="mb-6 p-4 rounded-xl bg-neon/10 border border-neon/20 flex items-start gap-3">
+                            <svg class="w-5 h-5 text-neon flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <p class="text-sm text-neon/90 font-medium">{{ session('success') }}</p>
+                        </div>
+                        @endif
+
+                        <form action="{{ route('contact.store') }}" method="POST" class="space-y-5">
                             @csrf
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 <div>

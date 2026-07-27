@@ -17,10 +17,12 @@ class WorkProgram extends Model
         'sekbid_owner',
         'status',
         'target_date',
+        'images',
     ];
 
     protected $casts = [
         'target_date' => 'date',
+        'images' => 'array',
     ];
 
     public function period(): BelongsTo

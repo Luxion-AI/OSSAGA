@@ -19,9 +19,17 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('pages.contact');
 });
+Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])
+    ->name('contact.store')
+    ->middleware('throttle:5,1'); // Prevent spam/DDoS on contact form
 
 Route::get('/timeline', function () {
-    return view('pages.timeline');
+    $activePeriod = \App\Models\Period::active();
+    $workPrograms = $activePeriod 
+        ? \App\Models\WorkProgram::where('period_id', $activePeriod->id)->orderBy('target_date', 'asc')->get()
+        : collect([]);
+
+    return view('pages.timeline', compact('workPrograms'));
 });
 
 Route::get('/hall-of-leadership', function () {
@@ -35,9 +43,10 @@ Route::get('/persembahan', function () {
 // ========================
 // AUTHENTICATION
 // ========================
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middleware('guest');
-Route::post('/login', [AuthController::class, 'login'])->middleware('guest');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// Redirect old login to Filament login
+Route::get('/login', function () {
+    return redirect('/admin/login');
+})->name('login');
 
 // ========================
 // HEALTH CHECK (Railway)

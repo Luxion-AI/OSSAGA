@@ -46,6 +46,12 @@ class WorkProgramResource extends Resource
                     ->label('Deskripsi')
                     ->required()
                     ->columnSpanFull(),
+                Forms\Components\FileUpload::make('images')
+                    ->label('Dokumentasi')
+                    ->multiple()
+                    ->image()
+                    ->directory('proker-images')
+                    ->columnSpanFull(),
             ]);
     }
 

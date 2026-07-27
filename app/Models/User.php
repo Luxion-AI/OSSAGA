@@ -16,7 +16,8 @@ class User extends Authenticatable implements FilamentUser
 
     public function canAccessPanel(Panel $panel): bool
     {
-        return true; // You can restrict this to $this->is_superadmin if needed
+        // Only allow superadmins or users with an active role
+        return $this->is_superadmin || $this->roleInActivePeriod() !== null;
     }
 
     protected $fillable = [

@@ -50,7 +50,7 @@
                     @endphp
 
                     @foreach($missions as $index => $mission)
-                    <div class="rounded-2xl bg-surface-raised border border-white/5 p-6 hover:border-neon/30 hover:bg-gradient-to-br hover:from-neon/5 hover:to-electric/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-neon/5 transition-all duration-500 card-shine group">
+                    <div class="rounded-2xl bg-surface-raised border border-white/5 p-6 hover:border-neon/30 hover:bg-gradient-to-br hover:from-neon/5 hover:to-electric/5 hover:-translate-y-1 hover:shadow-xl hover:shadow-neon/5 transition-all duration-500 card-shine group {{ $index === 4 ? 'sm:col-span-2' : '' }}">
                         <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-neon/60 flex items-center justify-center mb-4 group-hover:bg-neon/10 group-hover:border-neon/30 group-hover:text-neon group-hover:scale-110 group-hover:shadow-md group-hover:shadow-neon/10 transition-all duration-500">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">{!! $mission['icon'] !!}</svg>
                         </div>
